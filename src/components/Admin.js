@@ -36,20 +36,23 @@ function Admin() {
               className={`nav-btn ${telaAtiva === "venda" ? "nav-btn-active" : ""}`}
               onClick={() => setTelaAtiva("venda")}
             >
-              Vendas
+              Venda
             </button>
-            <button className="nav-btn nav-btn-logout" onClick={handleLogout}>
+            <button 
+              className="nav-btn logout-btn"
+              onClick={handleLogout}
+            >
               Sair
             </button>
           </div>
         </div>
       </nav>
 
-      <div className="admin-content">
+      <main className="admin-main">
         {telaAtiva === "produtos" && <Produtos />}
         {telaAtiva === "categorias" && <Categorias />}
         {telaAtiva === "venda" && <Venda />}
-      </div>
+      </main>
     </div>
   );
 }
